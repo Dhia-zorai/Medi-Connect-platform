@@ -53,21 +53,46 @@ app.use('/patient', require('./routes/patient'));
 app.use('/api', require('./routes/api'));
 
 // Start Server
-const server = app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-}).on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-        console.error(`❌ Port ${PORT} is already in use. Please kill the process or use a different port.`);
-    } else {
-        console.error('❌ Server error:', err);
-    }
-    process.exit(1);
-});
+// Initialize Database and Start Server
+const fs = require('fs');
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-    console.log('SIGTERM signal received: closing HTTP server');
-    server.close(() => {
-        console.log('HTTP server closed');
-    });
-});
+async function startServer() {
+    try {
+        // Read schema.sql
+        const schemaPath = path.join(__dirname, 'schema.sql');
+        const schemaSql = fs.readFileSync(schemaPath, 'utf8');
+
+        // Execute schema
+        console.log('🔄 Initializing database...');
+        await pool.query(schemaSql);
+        console.log('✅ Database initialized successfully');
+
+        // Start Server
+        const server = app.listen(PORT, () => {
+            console.log(`Server running on http://localhost:${PORT}`);
+        }).on('error', (err) => {
+            if (err.code === 'EADDRINUSE') {
+                console.error(`❌ Port ${PORT} is already in use. Please kill the process or use a different port.`);
+            } else {
+                console.error('❌ Server error:', err);
+            }
+            process.exit(1);
+        });
+
+        // Graceful shutdown
+        process.on('SIGTERM', () => {
+            console.log('SIGTERM signal received: closing HTTP server');
+            server.close(() => {
+                console.log('HTTP server closed');
+            });
+        });
+
+    } catch (err) {
+        console.error('❌ Failed to initialize database:', err);
+        process.exit(1);
+    }
+}
+
+startServer();
+
+
