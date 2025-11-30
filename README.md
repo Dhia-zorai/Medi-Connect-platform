@@ -151,13 +151,13 @@ This project is provided for educational / hackathon purposes. Feel free to adap
 
 ## 🙏 Acknowledgements
 
-=======
+
 
 - Icons from **Font Awesome**.
 - Supabase for simple object storage.
 
 ---
 
-=======
+
 
 
