@@ -120,7 +120,6 @@ This project is provided for educational / hackathon purposes. Feel free to adap
 
 ## 🙏 Acknowledgements
 
-- Inspired by **Doctolib** UI/UX.
 - Icons from **Font Awesome**.
 - Supabase for simple object storage.
 
