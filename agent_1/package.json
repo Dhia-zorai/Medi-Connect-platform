@@ -1,0 +1,24 @@
+{
+  "name": "email-reminder-agent",
+  "version": "1.0.0",
+  "description": "Time-based email reminder agent using Resend API",
+  "main": "reminderAgent.js",
+  "type": "module",
+  "scripts": {
+    "start": "node reminderAgent.js",
+    "test": "node reminderAgent.js"
+  },
+  "keywords": [
+    "email",
+    "reminder",
+    "resend",
+    "agent"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "pg": "^8.11.3",
+    "resend": "^3.0.0"
+  }
+}
