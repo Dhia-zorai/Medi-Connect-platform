@@ -151,18 +151,13 @@ This project is provided for educational / hackathon purposes. Feel free to adap
 
 ## 🙏 Acknowledgements
 
-<<<<<<< HEAD
-- Inspired by **Doctolib** UI/UX.
 =======
->>>>>>> cb09ee84dc8a7a7d4bbac41578025e41fabdb027
+
 - Icons from **Font Awesome**.
 - Supabase for simple object storage.
 
 ---
-<<<<<<< HEAD
 
-*Happy coding, and may your appointments always be on time!*
 =======
-## Credits : Big thanks to @taherx7, @threalzaara, @mondherbenazza, @frozedy
 
->>>>>>> cb09ee84dc8a7a7d4bbac41578025e41fabdb027
+
