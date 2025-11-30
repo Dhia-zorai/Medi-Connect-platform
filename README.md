@@ -58,10 +58,9 @@
 
 ---
 
-<<<<<<< HEAD
 ## 🚀 Deployment on Render
 
-This project is configured for easy deployment on [Render](https://render.com).
+This project is configured for easy deployment on [Render](https://medi-connect-platform.onrender.com/?brid=R-zuq8w7B-eQe32S16Eg8Q).
 
 ### Option 1: Blueprints (Recommended)
 1. Create a new **Blueprint Instance** on Render.
@@ -90,7 +89,6 @@ After deployment, connect to your Render database (using the external connection
 ---
 
 =======
->>>>>>> cb09ee84dc8a7a7d4bbac41578025e41fabdb027
 ## ⚙️ Environment Variables (`.env`)
 
 | Variable | Description |
