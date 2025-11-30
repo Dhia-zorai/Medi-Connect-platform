@@ -140,7 +140,7 @@
     </div>
 
     <script>
-        const doctorId = <%= doctor.id %>;
+        const doctorId = '<%= doctor.id %>';
         let currentBookingDate = new Date();
         let selectedBookingDate = null;
 
@@ -239,7 +239,7 @@
             slotsGrid.innerHTML = '<p style="text-align: center;">Loading slots...</p>';
             
             try {
-                const response = await fetch(`/patient/doctor/<%= doctor.id %>/slots?date=${dateStr}`);
+                const response = await fetch(`/patient/doctor/${doctorId}/slots?date=${dateStr}`);
                 const data = await response.json();
                 
                 if (data.slots && data.slots.length > 0) {
